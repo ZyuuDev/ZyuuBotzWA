@@ -1,0 +1,168 @@
+:root {
+  /* Cartethyia Theme */
+  --primary-color: #ffb800; /* Golden Yellow */
+  --primary-hover: #e5a600; /* Darker Gold */
+  --secondary-color: #0047ab; /* Royal Blue */
+  --accent-color: #ff8c00; /* Orange Accent */
+
+  --text-primary: #1f2937; /* Dark Gray for better readability on warm bg */
+  --text-secondary: #4b5563;
+
+  --bg-light: #fffbf0; /* Warm White/Cream */
+  --bg-white: #ffffff;
+
+  --border-color: #f3e5ab; /* Light Goldish Border */
+
+  --shadow-sm: 0 1px 2px 0 rgba(255, 184, 0, 0.1);
+  --shadow-md:
+    0 4px 6px -1px rgba(255, 184, 0, 0.1),
+    0 2px 4px -1px rgba(255, 184, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(255, 184, 0, 0.1),
+    0 4px 6px -2px rgba(255, 184, 0, 0.05);
+
+  --font-family:
+    "Outfit", system-ui, -apple-system, sans-serif; /* Setup for new font if needed, keeping system for now */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* Rounded pill */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  /* Animations */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility Classes for Animation */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Global Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background-color: #f3f4f6;
+}

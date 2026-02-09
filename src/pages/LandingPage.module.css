@@ -1,0 +1,332 @@
+.hero {
+  padding: 6rem 0 4rem;
+  background-color: var(--bg-light);
+  overflow: hidden;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.heroText {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+  /* Animation removed */
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.highlight {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background-color: rgba(255, 184, 0, 0.2); /* Transparent Primary */
+  z-index: -1;
+  transform: rotate(-2deg);
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Add hover effect to hero buttons */
+.heroActions a,
+.heroActions button {
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.heroActions a:hover,
+.heroActions button:hover {
+  transform: translateY(-3px);
+}
+
+/* Image/Dashboard Mockup */
+.heroImage {
+  flex: 1;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  /* Animation removed */
+}
+
+/* Stats Section */
+.stats {
+  background: var(--bg-white);
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* General Section Styles */
+.features,
+.pricing {
+  padding: 6rem 0;
+  background: var(--bg-white);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  /* Animation removed for stability */
+}
+
+.tagline {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 184, 0, 0.1);
+  color: var(--primary-hover);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.sectionSubtitle {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Feature Cards */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  /* Animation on scroll view would ideally use JS intersection observer or view-timeline */
+  /* For now, just hover effects as strictly requested "CSS pure" */
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.featureIcon {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-fast);
+}
+
+.featureCard:hover .featureIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.featureText {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Pricing Cards */
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricingCard {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.pricingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricingCard.popular {
+  border-color: var(--primary-color);
+  background: linear-gradient(to bottom, #fffdf5, #ffffff);
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02); /* Make it slightly larger */
+}
+
+.pricingCard.popular:hover {
+  transform: scale(1.02) translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.popularTag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.planName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.planPrice {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.planPrice span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  flex: 1;
+}
+
+.featureList li {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.checkIcon {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .heroContent {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .heroText {
+    text-align: left;
+  }
+
+  .heroActions {
+    justify-content: flex-start;
+  }
+
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroText {
+    margin-bottom: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+}
